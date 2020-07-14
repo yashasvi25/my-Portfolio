@@ -1,18 +1,164 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yashasvi Gour</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="menu-toggler">
+            <div class="bar half start"></div>
+            <div class="bar"></div>
+            <div class="bar half end"></div>
+        </div>
+        <nav class="top-nav">
+            <ul class="nav-list">
+                <li>
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li>
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li>
+                    <a href="#journey" class="nav-link">Work and Education timeline</a>
+                </li>
+                <li>
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li>
+                    <a href="#interests" class="nav-link">Interests</a>
+                </li>
+                <li>
+                    <a href="#contact" class="nav-link">Contact me</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="landing-text">
+            <h1>Yashasvi Gour</h1>
+            <h6>passionate about learning</h6>
+        </div>
+    </header>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="profile-image" data-aos="fade-right" data-aos-delay="300">
+                <img src="images-y\image-1.jpeg" alt="Yashasvi Gour image">
+            </div>
+        </div>
+        <div class="about-details" data-aos="fade-left" data-aos-delay="600">
+            <div class="about-heading">
+                <h1>About</h1>
+                <h6>Myself</h6>
+            </div>
+            <p>I am currently pursuing Bachelor of Technology in Computer Science and Engineering from Indian Institute of Technology,Dhanbad.I am a NTSE Scholar and was a software engineering intern with Microsoft in summer'2020.</p>
+            <p>I am a technology enthusiast and like learning new skills. I love doing compeitive programming and favourite subjects include Data Structures and Algorithms and Object Oriented Programming</p>
+            <p>I love exploring nature and have an interest in nature conservation activities.I like doing painting and dance.</p>
+            <div class="social-media">
+                <ul class="nav-list">
+                    <li>
+                        <a href="#" class="icon-link">
+                            <i class="fab fa-linkedin-square"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="icon-link">
+                            <i class="fab fa-github-square"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="icon-link">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+       
+    </section>
+
+    <section class="journey" id="journey">
+        <div class="container">
+            <div class="section-heading">
+                <h1>Work and Education Timeline</h1>
+            </div>
+            <div class="timeline">
+                <ul>
+                    <li class="date" data-date="July 2020 - August 2020">
+                        <h1>Google Software Product Sprint</h1>
+                    </li>
+                    <li class="date" data-date="May 2020 - July 2020">
+                        <h1>Microsoft Software Engineer Intern</h1>
+                    </li>
+                    <li class="date" data-date="July 2017 - May 2021">
+                        <h1>Indian Institute of Technology (ISM) Dhanbad</h1>
+                        <p>Bachelor of Technology in Computer Science and Engineering</p>
+                        <p>OGPA - 7.71</p>
+                    </li>
+                    <li class="date" data-date="April 2014 - April 2016">
+                        <h1>MDS Public School,Udaipur</h1>
+                        <p>Senior Secondary Education</p>
+                        <p>Class XII Percentage : 91.2 </p>
+                    </li>
+                    <li class="date" data-date="April 2013 - March 2014">
+                        <h1>St. Mary's Convent Senior Secondary School,Udaipur</h1>
+                        <p>Secondary Education</p>
+                        <p>Class X CGPA : 10 </p>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-heading">
+                <h1>Projects</h1>
+            </div>
+            <div class="my-projects">
+                <div class="projects">
+                    <div class="section-heading">
+                        <i class="fas fa-face-group"></i>
+                    </div>
+                    <h1>Real time face recognizer</h1>
+                    <p>Developed a face recognition model in Python using KNN algorithm.
+                        The model recognises multiple faces present in the frame in real time.
+                        The model has been tested for 4 people at the same time with an accuracy of 75.84% .</p>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+    <section class="interests" id="interests">
+        <div class="container">
+            <div class="section-heading">
+                <h1>Interests</h1>
+                <h6>Exploring nature</h6>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-heading">
+                <h1>Contact me</h1>
+                <h6>Let's connect</h6>
+            </div>
+            <form action="">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email" required>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
-  </head>
-  <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-    </div>
-  </body>
+</body>
 </html>
