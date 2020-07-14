@@ -15,6 +15,8 @@
 /**
  * Adds a random greeting to the page.
  */
+
+/*
 function addRandomGreeting() {
   const greetings =
       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
@@ -25,4 +27,29 @@ function addRandomGreeting() {
   // Add it to the page.
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
-}
+}*/
+
+$(document).ready(function () {
+    $('.menu-toggler').on('click',function(){
+        $(this).toggleClass('open');
+        $('.top-nav').toggleClass('open');
+    });
+
+    $('.top-nav .nav-link').on('click',function(){
+        $('.menu-toggler').removeClass('open');
+        $('.top-nav').removeClass('open');
+    });
+
+    /*$('nav a[href="#').on('click',function(){
+        $('html, body').animate( keyframes: {
+            scrollTop: $($(this).attr('href')).offset().top - 100
+        }, options:2000);
+    });*/
+
+    AOS.init({
+        easing: 'ease',
+        duration: 1800,
+        once: false
+    });
+
+});
