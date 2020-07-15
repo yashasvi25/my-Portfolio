@@ -53,3 +53,61 @@ $(document).ready(function () {
     });
 
 });
+
+function getHelloMsg() {
+  console.log('Fetching hello message.');
+
+  // The fetch() function returns a Promise because the request is asynchronous.
+  const responsePromise = fetch('/data');
+
+  // When the request is complete, pass the response into handleResponse().
+  responsePromise.then(handleResponse);
+}
+
+
+function handleResponse(response) {
+  console.log('Handling the response.');
+
+  // response.text() returns a Promise, because the response is a stream of
+  // content and not a simple variable.
+  const textPromise = response.text();
+
+  // When the response is converted to text, pass the result into the
+  // addQuoteToDom() function.
+  textPromise.then(addMessageToDom);
+}
+
+/** Adds a random quote to the DOM. */
+function addMessageToDom(msg) {
+  console.log('Adding message to dom: ' + msg);
+
+  const msgContainer = document.getElementById('msg-container');
+  //msgContainer.innerHTML('<h1></h1>');
+  msgContainer.innerText = msg;
+}
+
+/**
+ * The above code is organized to show each individual step, but we can use an
+ * ES6 feature called arrow functions to shorten the code. This function
+ * combines all of the above code into a single Promise chain. You can use
+ * whichever syntax makes the most sense to you.
+ */
+function getHelloMessageUsingArrowFunctions() {
+    console.log('using arrow functions');
+  fetch('/data').then(response => response.text()).then((msg) => {
+    document.getElementById('msg-container').innerText = msg;
+  });
+}
+
+/**
+ * Another way to use fetch is by using the async and await keywords. This
+ * allows you to use the return values directly instead of going through
+ * Promises.
+ */
+async function getHelloMessageUsingAsyncAwait() {
+  const response = await fetch('/data');
+  const msg = await response.text();
+  document.getElementById('msg-container').innerText = msg;
+}
+
+
