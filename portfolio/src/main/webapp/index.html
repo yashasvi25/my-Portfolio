@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -25,7 +28,7 @@
                     <a href="#about" class="nav-link">About</a>
                 </li>
                 <li>
-                    <a href="#journey" class="nav-link">Work and Education timeline</a>
+                    <a href="#journey" class="nav-link">Journey timeline</a>
                 </li>
                 <li>
                     <a href="#projects" class="nav-link">Projects</a>
@@ -47,44 +50,47 @@
     <section class="about" id="about">
         <div class="container">
             <div class="profile-image" data-aos="fade-right" data-aos-delay="300">
-                <img src="images-y\image-1.jpeg" alt="Yashasvi Gour image">
+                <img src="./images-y/yashasvi.jpg" alt="Yashasvi Gour image">
+            </div>
+            <div class="about-details" data-aos="fade-left" data-aos-delay="600">
+                <div class="about-heading">
+                    <h1>About</h1>
+                    <h6>Myself</h6>
+                </div>
+                <p>Hello everyone, My name is Yashasvi Gour. I am currently in final year pursuing B.Tech in Computer Science from IIT (ISM) Dhanbad. I interned with Microsoft as a software engineer intern in summer'2020.
+                    I like to do competitive programming and I am active on platforms like Codeforces, Hackerrank.<br>
+                    My hometown is Udaipur in Rajasthan which is also known as City of Lakes. Many movies have been shot here like James Bond Octopussy, Irrfan’s English Medium and many more.<br>
+                    I love travelling. I am also a team member of ACM Chapter of my college. I am a NTSE Scholar and love solving mathematical puzzles and I have interests in bird watching and space and art as well (too much diversity :))                         
+                </p>
+                <div class="social-media">
+                    <ul class="nav-list">
+                        <li>
+                            <a href="https://www.linkedin.com/in/yashasvi-gour-410569179/" class="icon-link">
+                                <i class="fab fa-linkedin-square"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/yashasvi25" class="icon-link">
+                                <i class="fab fa-github-square"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/yashasvi.gour/" class="icon-link">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="about-details" data-aos="fade-left" data-aos-delay="600">
-            <div class="about-heading">
-                <h1>About</h1>
-                <h6>Myself</h6>
-            </div>
-            <p>I am currently pursuing Bachelor of Technology in Computer Science and Engineering from Indian Institute of Technology,Dhanbad.I am a NTSE Scholar and was a software engineering intern with Microsoft in summer'2020.</p>
-            <p>I am a technology enthusiast and like learning new skills. I love doing compeitive programming and favourite subjects include Data Structures and Algorithms and Object Oriented Programming</p>
-            <p>I love exploring nature and have an interest in nature conservation activities.I like doing painting and dance.</p>
-            <div class="social-media">
-                <ul class="nav-list">
-                    <li>
-                        <a href="#" class="icon-link">
-                            <i class="fab fa-linkedin-square"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon-link">
-                            <i class="fab fa-github-square"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon-link">
-                            <i class="fab fa-facebook-square"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        
        
     </section>
 
-    <section class="journey" id="journey">
+    <section class="timeline" id="timeline">
         <div class="container">
-            <div class="section-heading">
-                <h1>Work and Education Timeline</h1>
+            <div class="timeline-heading">
+                <h1>Journey Timeline</h1>
             </div>
             <div class="timeline">
                 <ul>
@@ -119,17 +125,28 @@
             <div class="section-heading">
                 <h1>Projects</h1>
             </div>
-            <div class="my-projects">
-                <div class="projects">
-                    <div class="section-heading">
-                        <i class="fas fa-face-group"></i>
-                    </div>
-                    <h1>Real time face recognizer</h1>
-                    <p>Developed a face recognition model in Python using KNN algorithm.
-                        The model recognises multiple faces present in the frame in real time.
-                        The model has been tested for 4 people at the same time with an accuracy of 75.84% .</p>
+            <div class="project-item">
+                <div class="project-img">
+                    <img src="images-y/ml.jpg" has-margin-right>
                 </div>
-            </div> 
+                <div class="project-description">
+                    <h1>Real time face recognizer</h1>
+                    <p>
+                        Developed a face recognition model in Python using KNN algorithm. The model recognises multiple faces present in the frame in real time. The model has been tested for 4 people at the same time with an accuracy of 75.84% .
+                    </p>
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="project-img">
+                    <img src="images-y/socketchatbox.jpg" has-margin-right>
+                </div>
+                <div class="project-description">
+                    <h1>Client Server Chat Box</h1>
+                    <p>
+                        It is a basic chat server programmed to handle multiple users (clients) using socket programming. You can download / upload files from / to the server and send messages through the server to other connected clients.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -137,8 +154,20 @@
         <div class="container">
             <div class="section-heading">
                 <h1>Interests</h1>
-                <h6>Exploring nature</h6>
             </div>
+            <div class="interest-item">
+                <img src="images-y/bird.jpg" class="interest-img">
+                <p>Bird Watching</p>
+            </div>
+            <div class="interest-item">
+                <img src="images-y/image-4.JPG" class="interest-img">
+                <p>Travelling</p>
+            </div>
+            <div class="interest-item">
+                <img src="images-y/The_Adventures_of_Tintin.png" class="interest-img">
+                <p>Reading Comics</p>
+            </div>
+
         </div>
     </section>
 
@@ -153,7 +182,7 @@
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email" placeholder="Enter your email" required>
-                <input type="submit" value="submit">
+                <input type="submit" value="SUBMIT">
             </form>
         </div>
     </section>
