@@ -54,6 +54,7 @@ $(document).ready(function () {
 
 });
 
+/*
 function getHelloMsg() {
   console.log('Fetching hello message.');
 
@@ -77,7 +78,8 @@ function handleResponse(response) {
   textPromise.then(addMessageToDom);
 }
 
-/** Adds a random quote to the DOM. */
+/*
+/** Adds a random quote to the DOM. 
 function addMessageToDom(msg) {
   console.log('Adding message to dom: ' + msg);
 
@@ -91,7 +93,7 @@ function addMessageToDom(msg) {
  * ES6 feature called arrow functions to shorten the code. This function
  * combines all of the above code into a single Promise chain. You can use
  * whichever syntax makes the most sense to you.
- */
+ 
 function getHelloMessageUsingArrowFunctions() {
     console.log('using arrow functions');
   fetch('/data').then(response => response.text()).then((msg) => {
@@ -103,11 +105,43 @@ function getHelloMessageUsingArrowFunctions() {
  * Another way to use fetch is by using the async and await keywords. This
  * allows you to use the return values directly instead of going through
  * Promises.
- */
+ 
 async function getHelloMessageUsingAsyncAwait() {
   const response = await fetch('/data');
   const msg = await response.text();
   document.getElementById('msg-container').innerText = msg;
 }
+
+*/
+
+function getMessages() {
+  fetch('/data').then(response => response.json()).then((msgs) => {
+    // stats is an object, not a string, so we have to
+    // reference its fields to create HTML content
+
+    console.log(msgs[0]);
+    console.log(msgs[1]);
+    console.log(msgs[2]);
+
+    const msgListElement = document.getElementById('msgs-container');
+
+    msgListElement.innerHTML = '';
+     
+    msgListElement.appendChild(
+        createListElement(msgs[0]));
+    msgListElement.appendChild(
+        createListElement(msgs[1]));
+    msgListElement.appendChild(
+        createListElement(msgs[2]));
+  });
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
+
 
 
