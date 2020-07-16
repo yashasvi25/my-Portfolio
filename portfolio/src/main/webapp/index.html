@@ -28,7 +28,7 @@
                     <a href="#about" class="nav-link">About</a>
                 </li>
                 <li>
-                    <a href="#journey" class="nav-link">Journey timeline</a>
+                    <a href="#timeline" class="nav-link">Journey timeline</a>
                 </li>
                 <li>
                     <a href="#projects" class="nav-link">Projects</a>
@@ -38,6 +38,9 @@
                 </li>
                 <li>
                     <a href="#contact" class="nav-link">Contact me</a>
+                </li>
+                <li>
+                    <a href="#comment" class="nav-link">Comment Section</a>
                 </li>
             </ul>
         </nav>
@@ -187,11 +190,19 @@
         </div>
     </section>
 
-    <section class="backend" id="backend">
+    <section class="comment" id="comment">
         <div class="container">
             <div class="section-heading">
                 <h1>Comment Section</h1>
             </div>
+             <form action="/data" method="POST">
+
+                <input type="text" id="cmt" name="comment-input" placeholder="Enter your comment about portfolio here!" required>
+
+                <br/><br/>
+ 
+                <input type="submit" value="SUBMIT">
+            </form>
             <div id="msgs-container"></div>
         </div>
     </section>
