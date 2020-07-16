@@ -12,17 +12,48 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+$(document).ready(function () {
+    $('.menu-toggler').on('click',function(){
+        $(this).toggleClass('open');
+        $('.top-nav').toggleClass('open');
+    });
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+    $('.top-nav .nav-link').on('click',function(){
+        $('.menu-toggler').removeClass('open');
+        $('.top-nav').removeClass('open');
+    });
+
+    AOS.init({
+        easing: 'ease',
+        duration: 1800,
+        once: false
+    });
+
+});
+
+
+function getMessages() {
+  fetch('/data').then(response => response.json()).then((cmts) => {
+
+
+    const cmtListElement = document.getElementById('msgs-container');
+
+    cmtListElement.innerHTML = '';
+
+    for (const cmtsingle of cmts) { 		      
+         cmtListElement.appendChild(createListElement(cmtsingle));  		
+      }
+    
+  });
 }
+
+
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
+
+
+
