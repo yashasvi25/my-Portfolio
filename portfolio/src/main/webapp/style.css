@@ -100,6 +100,43 @@ section{
     margin-bottom: 5rem;
     
 }
+
+form{
+    width: 70%;
+    margin: 0 auto;
+}
+
+form label{
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 2.2rem;
+    padding-bottom: 0.6rem;
+}
+
+input,
+select,
+textarea{
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 3.5rem;
+    border: none;
+    outline-color: #fd57bf;
+}
+
+input[type="submit"]{
+    width: initial;
+    background-color: #fd57bf;
+    color: #eee;
+    padding: 1rem 2rem;
+    border-radius: .8rem;
+    cursor: pointer;
+    transition: background-color 650ms;
+}
+
+input[type="submit"]:hover{
+    color: #221e3f;
+    background-color: #ffe838;
+}
 /*End reusable*/
 
 /*Start header*/
@@ -463,44 +500,15 @@ li{
     background-color: #221e3f;
 }
 
-form{
-    width: 70%;
-    margin: 0 auto;
-}
-
-form label{
-    display: inline-block;
-    box-sizing: border-box;
-    font-size: 2.2rem;
-    padding-bottom: 0.6rem;
-}
-
-input,
-select,
-textarea{
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 3.5rem;
-    border: none;
-    outline-color: #fd57bf;
-}
-
-input[type="submit"]{
-    width: initial;
-    background-color: #fd57bf;
-    color: #eee;
-    padding: 1rem 2rem;
-    border-radius: .8rem;
-    cursor: pointer;
-    transition: background-color 650ms;
-}
-
-input[type="submit"]:hover{
-    color: #221e3f;
-    background-color: #ffe838;
-}
 /*End contact*/
 
+/*start comment*/
+
+.msgs-container p{
+    padding: 1.2rem;
+}
+
+/*end comment*/
 
 /*Start animations*/
 @keyframes pulse{
