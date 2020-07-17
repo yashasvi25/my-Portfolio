@@ -1,18 +1,3 @@
-// Copyright 2019 Google LLC
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     https://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-
 $(document).ready(function () {
     $('.menu-toggler').on('click',function(){
         $(this).toggleClass('open');
@@ -36,23 +21,23 @@ $(document).ready(function () {
 function getMessages() {
   fetch('/data').then(response => response.json()).then((cmts) => {
 
-
+    console.log(cmts);
     const cmtListElement = document.getElementById('msgs-container');
 
     cmtListElement.innerHTML = '';
 
     for (const cmtsingle of cmts) { 		      
-         cmtListElement.appendChild(createListElement(cmtsingle));  		
+         cmtListElement.appendChild(createParaElement(cmtsingle.commentInput));  		
       }
     
   });
 }
 
 
-function createListElement(text) {
-  const liElement = document.createElement('li');
-  liElement.innerText = text;
-  return liElement;
+function createParaElement(text) {
+  const ParaElement = document.createElement('p');
+  ParaElement.innerText = text;
+  return ParaElement;
 }
 
 
