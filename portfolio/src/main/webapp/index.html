@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body onload="getMessages()">
+<body onload="getMessages(); createMap();">
 
     <header>
         <div class="menu-toggler">
@@ -192,9 +192,17 @@
 
     <section class="comment" id="comment">
         <div class="container">
-            <div class="section-heading">
+            <div class="section-heading"> 
                 <h1>Comment Section</h1>
             </div>
+            <button onclick="CheckLoginStatus()">Comment!</button>
+            <div class="login" id="login">
+                <a href="/loginPortfolio">Login here!</a>
+            </div>
+            <div class="logout" id="logout">
+                <a href="/loginPortfolio">Logout here!</a>
+            </div>
+            <div class="comment-section" id="comment-section">
              <form action="/data" method="POST">
 
                 <input type="text" id="cmt" name="comment-input" placeholder="Enter your comment about portfolio here!" required>
@@ -202,13 +210,25 @@
                 <br/><br/>
  
                 <input type="submit" value="SUBMIT">
-            </form>
+             </form>
+            </div>
             <div class="msgs-container" id="msgs-container"></div>
+        </div>
+    </section>
+
+    <section class="googlemaps" id="googlemaps">
+        <div class="container">
+            <div class="section-heading">
+                <h1>Hello Google Maps</h1>
+            </div>
+            <div id="map"></div>
+            <p>This is the map of Udaipur, my hometown</p>
         </div>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcxAyLmQSNcqWgglqDT7uTFalpUJIYeyM"></script>
     <script src="script.js"></script>
 </body>
 </html>

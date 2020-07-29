@@ -1,5 +1,7 @@
 package com.google.sps.servlets;
 
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
@@ -20,11 +22,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet { 
 
-  private DatastoreService datastore;
-
-  public void init() {
-      datastore = DatastoreServiceFactory.getDatastoreService();
-  }
+  private DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+  
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -38,8 +37,9 @@ public class DataServlet extends HttpServlet {
       long id = entity.getKey().getId();
       String commentInput = (String) entity.getProperty("commentInput");
       long timestamp = (long) entity.getProperty("timestamp");
+      String email = (String) entity.getProperty("email");
 
-      Comment comment = new Comment(id, commentInput, timestamp);
+      Comment comment = new Comment(id, commentInput, timestamp, email);
       comments.add(comment);
     }
     
@@ -55,21 +55,27 @@ public class DataServlet extends HttpServlet {
     String commentInput = getParameter(request, "comment-input", "");
     long timestamp = System.currentTimeMillis();
 
+    
+    UserService userService = UserServiceFactory.getUserService();
+    String userEmail = userService.getCurrentUser().getEmail();
+
     Entity commentEntity = new Entity("Comment");
     commentEntity.setProperty("commentInput", commentInput);
     commentEntity.setProperty("timestamp", timestamp);
+    commentEntity.setProperty("email", userEmail);
 
     datastore.put(commentEntity);
 
     response.sendRedirect("/#comment");
   }
 
-  private String getParameter(HttpServletRequest request, String name, String defaultValue) {
-    String value = request.getParameter(name);
+  private String getParameter(HttpServletRequest request, String stringInput, String defaultValue) {
+    String value = request.getParameter(stringInput);
     if (value == null) {
       return defaultValue;
     }
     return value;
   }
+
 
 }

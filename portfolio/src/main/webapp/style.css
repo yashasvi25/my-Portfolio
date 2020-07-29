@@ -379,6 +379,15 @@ li{
 
 /*End projects*/
 
+/*start googlemaps*/
+#map {
+  border: thin solid black;
+  height: 500px;
+  width: 500px;
+}
+
+/*end googlemaps*/
+
 /*Start timeline*/
 .timeline ul{
     border-left: 4px solid #ffe838;
@@ -503,6 +512,18 @@ li{
 /*End contact*/
 
 /*start comment*/
+
+.comment-section{
+    display: none;
+}
+
+.login{
+    display: none;
+}
+
+.logout{
+    display: none;
+}
 
 .msgs-container p{
     padding: 1.2rem;
